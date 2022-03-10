@@ -1,0 +1,26 @@
+#news h1, #news p{
+  text-align: left;
+}
+#news h1 {
+  margin-bottom: 0.25em;
+}
+#local-and-date {
+  font-style: italic;
+  text-align: left;
+  margin-top: 0;
+}
+#news-description {
+  margin-top: 50px;
+}
+#news hr {
+  border: 2px solid #000000;
+  margin-bottom: 15px;
+}
+
+#news-references p{
+  margin-bottom: 2px;
+  margin-top: 2px;
+}
+.sigla {
+  font-weight: bold;
+}

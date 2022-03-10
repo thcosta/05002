@@ -1,0 +1,27 @@
+header h1, h2{
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+}
+header h2 {
+  font-size: 30px;
+  font-weight: normal;
+  font-style: italic;
+}
+header hr {
+  margin-top: 15px;
+  margin-bottom: 25px;
+  border: 2px solid #000000;
+}
+ol#link-topics li {
+  list-style-type: upper-roman;
+  margin-bottom: 15px;
+}
+#link-topics a {
+  text-decoration: none;
+}
+.green{
+  color: #38c704;
+}
+.red{
+  color: #e60404;
+}
