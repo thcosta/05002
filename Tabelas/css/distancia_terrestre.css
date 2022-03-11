@@ -1,0 +1,22 @@
+h1 {
+  margin-top: 35px;
+}
+main table {
+  margin-bottom: 20px;
+}
+main table, th, td {
+  border: 1px solid #000000;
+}
+main th, td {
+  padding: 5px 10px;
+}
+main th {
+  text-align: center;
+}
+main td {
+  text-align: left;
+}
+footer p {
+  font-size: 14px;
+  margin: 0 0;
+}

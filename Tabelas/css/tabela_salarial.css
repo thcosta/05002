@@ -1,0 +1,50 @@
+.nav {
+  background-color: #0202b9;
+  color: #FFFFFF;
+  height: 100px;
+  display: table;
+  width: 100%;
+}
+.nav h1 {
+  display: table-cell;
+  vertical-align: middle;
+}
+main {
+  display: grid;
+  padding: 80px 30px 10px 30px;
+}
+table {
+  width: 70%;
+  justify-self: center;
+}
+
+table, td, th {
+  border: 1px solid #000000;
+}
+
+thead {
+  background-color: #000000;
+  color: #FFFFFF;
+  font-weight: bold;
+  height: 40px
+}
+
+tbody {
+  font-weight: normal;
+}
+
+.yellow {
+  background-color: #fcf6c1;
+}
+
+.white {
+  background-color: #FFFFFF;
+}
+
+.blue-text {
+  color: #0202b9;
+}
+
+.text-center {
+  text-align: center;
+}
