@@ -1,0 +1,48 @@
+header {
+  text-align: center;
+}
+header h1 {
+  text-decoration: underline;
+  color: #505050;
+}
+main {
+  display: block;
+  text-align: center;
+}
+#grades {
+  display: inline-block;
+}
+#grades table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  font-size: 12px;
+  font-family: times;
+}
+#grades td {
+  padding: 5px;
+  margin: 0;
+}
+#grades thead{
+  background-color: #606060;
+  color: #ffffff;
+}
+#grades th {
+  width: 100px;
+  padding: 5px;
+}
+#grades th.first-column{
+  width: 250px;
+}
+
+#grades td.first-column{
+  text-align: left;
+}
+
+#grades .tr-odd {
+  background-color: #e0e0e0;
+}
+
+#grades .tr-even{
+  background-color: #b0b0b0;
+}
+
