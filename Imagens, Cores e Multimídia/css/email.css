@@ -1,0 +1,60 @@
+body {
+  background-image: url(../images/bg_pk.jpg);
+}
+
+.row {
+  display: block;
+  text-align: center;
+}
+
+nav img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+nav h1 {
+  font-family: 'Courier New', Courier, monospace ;
+  font-size: 38px;
+  color: darkblue;
+  display: inline-block;
+  margin: 0 50px 0 50px;
+}
+
+.italic {
+  font-style: italic;
+}
+
+#email-softwares #os-list, img{
+  display: inline-block;
+}
+
+#email-softwares #os-list{
+  width: 30%;
+  margin-top: 0;
+}
+
+#email-softwares img{
+  vertical-align: top;
+}
+
+ul#os-list li{
+  list-style-image: url(../images/indbul3a.gif);
+}
+
+ul#programs-list {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+ul#programs-list li{
+  list-style-type: disc;
+  list-style-image: none;
+  color: darkblue;
+  font-weight: bold;
+}
+
+img.hr-line {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%
+}

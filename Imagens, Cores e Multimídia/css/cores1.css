@@ -1,0 +1,22 @@
+body {
+  background-color: beige;
+  color: maroon;
+}
+header h1 {
+  color: navy;
+} 
+.topic-block {
+  border-top: 1px solid gray;
+  margin-bottom: 20px
+}
+.topic-title {
+  font-weight: bold;
+  margin-top: 25px;
+  color: darkgreen;
+}
+a {
+  color: blue;
+}
+a:visited{
+  color: red;
+}

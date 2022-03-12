@@ -1,0 +1,25 @@
+body {
+  background-color: beige;
+  color: maroon;
+}
+header {
+  border-bottom: 3px solid maroon;
+}
+header h1 {
+  color: navy;
+} 
+.topic-block {
+  border-bottom: 3px dotted maroon;
+  padding-bottom: 30px;
+}
+.topic-title {
+  font-weight: bold;
+  margin-top: 25px;
+  color: darkgreen;
+}
+a {
+  color: blue;
+}
+a:visited{
+  color: red;
+}
