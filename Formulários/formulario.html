@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Thays Costa">
+    <title>Formulário de Pré-Matricula</title>
+    <link rel="stylesheet" href="css/formulario.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1>Escola Virtual</h1>
+        <h2>Formulário de Pré-Matrícula</h2>
+      </nav>
+    </header>
+    <form action="#" method="post">
+      <main>
+        <div class="row with-border">
+          <div class="field-group with-border">
+            <p>Dados Pessoais:</p>
+            <div class="inline-field">
+              <label for="nome">Nome do Aluno:</label>
+              <input type="text" name="nome" maxlength="40">
+            </div>
+            <div class="inline-field">
+              <label for="nascimento">Nascimento (dd/mm/aaaa):</label>
+              <input type="text" name="nascimento_dd" class="small-field" pattern="\d{2}" maxlength="2"> /
+              <input type="text" name="nascimento_mm" class="small-field" pattern="\d{2}" maxlength="2"> /
+              <input type="text" name="nascimento_aaaa" class="medium-field" pattern="\d{4}" maxlength="4">
+            </div>
+            <div class="inline-field">
+              <label for="mae">Nome da Mãe:</label>
+              <input type="text" name="mae" maxlength="40">
+            </div>
+            <div class="inline-field">
+              <label for="pai">Nome do Pai:</label>
+              <input type="text" name="pai" maxlength="40">
+            </div>
+            <div class="inline-field">
+              <label>Telefone:</label>
+                <label for="ddd" class="wrap-label">DDD</label> 
+                ( <input type="text" name="ddd" class="small-field" pattern="\d{3}" maxlength="3"> )
+                <label for="telefone" class="wrap-label">Tel:</label>
+                <input type="text" name="telefone" class="medium-field" pattern="\d{8}" maxlength="8">
+                <label for="ramal" class="wrap-label">Ramal:</label>
+                <input type="text" name="ramal" class="small-field" pattern="\d*">
+            </div>
+            <div class="inline-field">
+              <label for="email">Email:</label>
+              <input type="email" name="email" maxlength="40">
+            </div>
+          </div>
+
+          <div class="field-group with-border">
+            <p>Informações de Matrícula:</p>
+            <div class="row align-top">
+              <div class="input-block">
+                <div class="form-group">
+                  <label for="serie">Série:</label>
+                  <select name="serie">
+                    <option value="pre-escolar">Pré-escolar</option>
+                    <option value="primeira-serie">1ª Série</option>
+                    <option value="segunda-serie">2ª Série</option>
+                    <option value="terceira-serie">3ª Série</option>
+                    <option value="quarta-serie">4ª Série</option>
+                    <option value="quinta-serie">5ª Série</option>
+                    <option value="sexta-serie">6ª Série</option>
+                    <option value="setima-serie">7ª Série</option>
+                    <option value="oitava-serie">8ª Série</option>
+                    <option value="nona-serie">9ª Série</option>
+                    <option value="primeiro-ano">1º ano do ensino médio</option>
+                    <option value="segundo-ano">2º ano do ensino médio</option>
+                    <option value="terceiro-ano">3º ano do ensino médio</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-block">
+                <div class="form-group">
+                  <label for="turno">Turno:</label>
+                  <div class="row">
+                    <input type="radio" name="turno" value="manha"> Manhã
+                  </div>
+                  <div class="row">
+                    <input type="radio" name="turno" value="tarde"> Tarde
+                  </div>
+                </div>
+              </div>
+              <div class="input-block">
+                <label for="atividades">Atividades Extracurriculares:</label>
+                <div class="row">
+                  <input type="checkbox" name="atividades" value="informatica"> Informática
+                </div>
+                <div class="row">
+                  <input type="checkbox" name="atividades" value="musica"> Música
+                </div>
+                <div class="row">
+                  <input type="checkbox" name="atividades" value="ballet"> Ballet
+                </div>
+                <div class="row">
+                  <input type="checkbox" name="atividades" value="pintura"> Pintura
+                </div>
+                <div class="row">
+                  <input type="checkbox" name="atividades" value="judo"> Judô
+                </div>
+                <div class="row">
+                  <input type="checkbox" name="atividades" value="futebol"> Futebol
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <div class="row">
+          <input type="submit" value="Envia Formulário">
+          <input type="reset" value="Limpa campos">
+        </div>
+      </footer>
+  </form>
+  </body>
+</html>

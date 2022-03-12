@@ -1,0 +1,105 @@
+nav {
+  text-align: center;
+  font-family: times;
+  border-bottom: 2px solid grey;
+  margin-bottom: 50px;
+  padding-bottom: 10px;
+}
+
+nav h1 {
+  font-size: 36px;
+}
+
+main {
+  display: block;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.row {
+  display: inline-block;
+  padding: 2px;
+  padding-bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.with-border {
+  border: 1px solid #969494;
+}
+
+div.field-group {
+  padding: 10px;
+  text-align: left;
+  margin-bottom: 2px;
+}
+
+.field-group p {
+  text-align: left;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.inline-field, .inline-field label, input {
+  display: inline-block;
+}
+
+.inline-field {
+  padding-bottom: 10px;
+}
+
+.inline-field label {
+  width: 250px;
+  text-align: right;
+}
+
+.inline-field input {
+  width: 250px;
+}
+
+input.medium-field {
+  width: 85px;
+}
+
+input.small-field{
+  width: 50px;
+}
+
+label.wrap-label {
+  width: auto;
+}
+
+.align-top .input-block{
+  vertical-align: top;
+}
+
+div.input-block {
+  width: 31%;
+  display: inline-block;
+}
+
+div.input-block, div.input-block .row {
+  text-align: left;
+}
+
+.form-group label, .form-group input[type=text], .form-group select {
+  display: block;
+  vertical-align: top;
+}
+
+.form-group select {
+  background-color: #ffffff;
+}
+
+input:invalid {
+  border: 1px solid #d40303;
+  color:rgba(255, 0, 0, 0.568);
+}
+
+input:focus:valid {
+  color: #3fa0e0;
+}
+
+footer .row {
+  margin: 25px;
+}
