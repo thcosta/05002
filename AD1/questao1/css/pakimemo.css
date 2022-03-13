@@ -1,0 +1,59 @@
+body {
+  background-color: #116688;
+  color: #eeee22;
+  font-family: georgia, serif;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+td, th {
+  padding: 0;
+  margin: 0;
+}
+
+thead hr {
+  width: 370px;
+  margin-left: 0;
+}
+
+thead td, tbody td {
+  vertical-align: top;
+}
+
+address {
+  text-align: right;
+}
+
+address p, a {
+  font-size: 14px;
+  margin: 0;
+}
+
+a {
+  color: #ffff22;;
+}
+
+a:visited {
+  color: #dddd22;
+}
+
+tbody {
+  text-align: center;
+}
+
+tbody td {
+  padding-top: 10px;
+}
+
+ul {
+  text-align: left;
+}
+
+li {
+  padding: 10px;
+  list-style: square;
+}
