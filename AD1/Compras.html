@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <title>PakiMemo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/pakimemo.css">
+    <link rel="stylesheet" href="css/memorias.css">
+    <link rel="stylesheet" href="css/discos.css">
+    <link rel="stylesheet" href="css/formulario.css">
+    <style>
+      #loginCad {
+        width: 260px;
+      }
+      #idEmail {
+        width: 160px;
+      }
+      #senhaCad {
+        width: 180px;
+      }
+      #lisSelProd {
+        width: 370px;
+      }
+      #btnIncluir {
+        width: 70px;
+      }
+      #boxPedidos {
+        height: 100px;
+      }
+      #lisPedArea {
+        height: 90%;
+        width: 100%;
+      }
+      #fsBandeira {
+        height: 80px;
+        text-align: left;
+      }
+      #numCartao {
+        width: 350px;
+        height: 35px;
+        padding-top: 10px;
+      }
+      #valCartao {
+        width: 230px;
+        height: 35px;
+      }
+      #boxParcel {
+        width: 230px;
+        height: 30px;
+      }
+
+      /* my changes */
+      fieldset p {
+        font-style: italic;
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #fsBandeira {
+        width: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img class="imgLogo" src="images/PakiLogoTopo.png">
+      <address class="ender">
+        <p>Rua do Paço do Elefantinho, 123</p>
+        <p>Tel: (21) 4321-5678</p>
+        <a href="mailto:contato@paquiderme.com.br">contato@paquiderme.com.br</a>
+      </address>
+    </header>
+    <main>
+      <nav>
+        <ul>
+          <li><a href="PakiMemo.html">INICIAL</a></li>
+          <li><a href="Memorias.html">MEMÓRIAS</a></li>
+          <li><a href="Discos.html">HDS / SSDS</a></li>
+          <li><a href="Cadastro.html">CADASTRO</a></li>
+          <li><a href="Compras.html">COMPRAS</a></li>
+        </ul>
+      </nav>
+      <section class="apres">
+        <form action="/PakiMemo.html#" method="post" class="FormBox">
+          <h1>Compras</h1>
+
+          <fieldset class="FSLinhaInteira">
+            <legend>Identificação</legend>
+            <div class="LinhaForm">
+              <div class="ColEsq" id="loginCad">
+                <label for="email">E-mail:</label>
+              <input type="email" name="email" class="InpBoxGnd" id="idEmail">
+              </div>
+              <div class="ColDir" id="senhaCad">
+                <label for="senha">Senha:</label>
+                <input type="password" name="senha" class="InpBoxMed">
+              </div>
+            </div>
+            <p>Se você ainda não tem cadastro clique <a href="Cadastro.html">aqui</a>!</p>
+          </fieldset>
+
+          <fieldset class="FSLinhaInteira">
+            <legend>Lista de Compras</legend>
+            <div class="LinhaForm">
+              <div class="ColEsq" id="lisSelProd">
+                <label for="produtos">Produtos:</label>
+                <select name="produtos">
+                  <option value="" selected>-----</option>
+                  <optgroup label="Memória DDR3">
+                    <option value="Kingston 4Gb">Kingston 4Gb</option>
+                    <option value="Samsung 8Gb">Samsung 8Gb</option>
+                  </optgroup>
+                  <optgroup label="Memória DDR4">
+                    <option value="Kingston Fury 8Gb">Kingston Fury 8Gb</option>
+                    <option value="Corsair Vengeance 8Gb">Corsair Vengeance 8Gb</option>
+                  </optgroup>
+                  <optgroup label="HD Sata III">
+                    <option value="Western Digital 500 Gb">Western Digital 500 Gb</option>
+                    <option value="Seagate 1 Tb">Seagate 1 Tb</option>
+                  </optgroup>
+                  <optgroup label="SSD Sata III">
+                    <option value="Samdisk 480 Gb">Samdisk 480 Gb</option>
+                    <option value="Kingston 960 Gb">Kingston 960 Gb</option>
+                  </optgroup>
+                  <optgroup label="SSD M2">
+                    <option value="Kingston 500 Gb">Kingston 500 Gb</option>
+                    <option value="Western Digital 240 Gb">Western Digital 240 Gb</option>
+                  </optgroup>
+                </select>
+              </div>
+              <div class="ColDir" id="btnIncluir">
+                <input type="button" value="Incluir">
+              </div>
+            </div>
+            <div class="LinhaForm" id="boxPedidos">
+              <textarea name=lista-de-compras" class="InpBoxGnd" id="lisPedArea" readonly></textarea>
+            </div>
+            <div class="LinhaForm">
+              <div class="ColDir">
+                <label for="valor">Valor: R$</label>
+                <input type="text" name="valor" class="InpBoxMed" readonly>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="FSLinhaInteira">
+            <legend>Dados do Cartão:</legend>
+            <div class="LinhaForm">
+              <div class="ColEsq">
+                <div id="numCartao">
+                  <label>Número:</label>
+                  <input type="text" name="numero-campo1" class="numDD">
+                  <input type="text" name="numero-campo2" class="numDD">
+                  <input type="text" name="numero-campo3" class="numDD">
+                  <input type="text" name="numero-campo4" class="numDD">
+                </div>
+                <div id="valCartao">
+                  <label>Validade:</label>
+                  <input type="number" name="validade-mes" class="numDD" value="1"> / 
+                  <input type="number" name="validade-ano" class="numQD" value="2022">
+                </div>
+                <div id="boxParcel">
+                  <label for="parcelas">Parcelas:</label>
+                  <input type="number" name="parcelas" class="numDD" value="1"> x Sem Juros
+                </div>
+              </div>
+              
+              <fieldset class="FSColDir" id="fsBandeira">
+                <legend>Bandeira:</legend>
+                <div>
+                  <input type="radio" name="bandeira" id="visa" value="visa" checked>
+                  <label for="visa">Visa</label>
+                </div>
+                <div>
+                  <input type="radio" name="bandeira" id="master" value="master">
+                <label for="master">Master</label>
+                </div>
+                <div>
+                  <input type="radio" name="bandeira" id="elo" value="elo">
+                  <label for="elo">Elo</label>
+                </div>
+              </fieldset>
+            </div>
+          </fieldset>
+
+          <div class="botoes">
+            <input type="submit" value="Confirmar">
+            <input type="reset" value="Limpar">
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
