@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <title>PakiMemo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/pakimemo.css">
+    <link rel="stylesheet" href="css/memorias.css">
+    <link rel="stylesheet" href="css/discos.css">
+    <link rel="stylesheet" href="css/formulario.css">
+    <style>
+      #linhaEnder {
+        height: 50px;
+      }
+      #inpEnder {
+        width: 394px;
+        height: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img class="imgLogo" src="images/PakiLogoTopo.png">
+      <address class="ender">
+        <p>Rua do Paço do Elefantinho, 123</p>
+        <p>Tel: (21) 4321-5678</p>
+        <a href="mailto:contato@paquiderme.com.br">contato@paquiderme.com.br</a>
+      </address>
+    </header>
+    <main>
+      <nav>
+        <ul>
+          <li><a href="PakiMemo.html">INICIAL</a></li>
+          <li><a href="Memorias.html">MEMÓRIAS</a></li>
+          <li><a href="Discos.html">HDS / SSDS</a></li>
+          <li><a href="Cadastro.html">CADASTRO</a></li>
+          <li><a href="Compras.html">COMPRAS</a></li>
+        </ul>
+      </nav>
+      <section class="apres">
+        <form action="/PakiMemo.html#" method="post" class="FormBox">
+          <h1>Cadastro</h1>
+
+          <fieldset class="FSLinhaInteira">
+            <legend>Identificação</legend>
+            <div class="LinhaForm">
+              <label for="email">E-mail:</label>
+              <input type="email" name="email" class="InpBoxGnd">
+            </div>
+            <div class="LinhaForm">
+              <div class="ColEsq">
+                <label for="senha">Senha:</label>
+                <input type="password" name="senha" class="InpBoxMed">
+              </div>
+              <div class="ColDir">
+                <label for="senha-confimacao">Confirme:</label>
+                <input type="password" name="senha-confimacao" class="InpBoxMed">
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="FSLinhaInteira">
+            <legend>Dados Pessoais</legend>
+            <div class="LinhaForm">
+              <label for="nome">Nome:</label>
+              <input type="text" name="nome" class="InpBoxGnd">
+            </div>
+            <div class="LinhaForm" id="linhaEnder">
+              <label for="endereco">Endereço:</label>
+              <textarea name="endereco" class="InpBoxGnd" id="inpEnder"></textarea>
+            </div>
+            <div class="LinhaForm">
+              <div class="ColEsq">
+                <label for="telefone">Telefone:</label>
+                <input type="tel" name="telefone" class="InpBoxMed" pattern="\d{8,}">
+              </div>
+              <div class="ColDir">
+                <label for="celular">Celular:</label>
+                <input type="tel" name="celular" class="InpBoxMed" pattern="\d{9,}">
+              </div>
+            </div>
+
+            <fieldset class="FSColEsq">
+              <legend>Nascimento:</legend>
+              <div class="LinhaForm">
+                <input type="number" name="nascimento-dia" class="numDD" min="1" max="31" maxlength="2"> / 
+                <input type="number" name="nascimento-mes" class="numDD" min="1" max="12" maxlength="2"> / 
+                <input type="number" name="nascimento-ano" class="numQD" value="1980" maxlength="4">
+              </div>
+            </fieldset>
+
+            <fieldset class="FSColDir">
+              <legend>Sexo:</legend>
+              <div class="LinhaForm">
+                <input type="radio" name="sexo" value="masculino"> Mas
+                <input type="radio" name="sexo" value="feminino"> Fem
+                <input type="radio" name="sexo" value="outro" checked> Outro
+              </div>
+            </fieldset>
+          </fieldset>
+
+          <div class="botoes">
+            <input type="submit" value="Cadastrar">
+            <input type="reset" value="Limpar">
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
