@@ -28,7 +28,7 @@
   float: right;
 }
 
-/* field boxes class*/
+/* fields boxes class*/
 .LinhaForm {
   margin: 0;
   height: 30px;
@@ -62,16 +62,15 @@
 /* fields class */
 .InpBoxGnd, .InpBoxMed {
   display: block;
+  float: right;
 }
 
 .InpBoxGnd {
   width: 384px;
-  float: right;
 }
 
 .InpBoxMed {
   width: 80px;
-  float: right;
 }
 
 .numDD {
@@ -84,11 +83,11 @@
 
 /* my changes */
 input[type="text"], input[type="number"], input[type="email"], 
-input[type="password"], input[type="tel"] {
+input[type="password"], input[type="tel"], textarea {
   border-radius: 5px;
 }
 
-input[type="submit"], input[type="reset"], input[type="button"]  {
+input[type="submit"], input[type="reset"], button  {
   color: #4e4e4e;
 }
 

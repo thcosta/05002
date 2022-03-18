@@ -6,15 +6,14 @@ body {
 }
 
 header {
-  display: inline-block;
+  display: block;
   margin-bottom: 1px;
-  width: 100%;
 }
 
 .imgLogo {
   border-bottom: 3px solid #eeee22;
-  padding-bottom: 5px;
   margin-bottom: 4px;
+  padding-bottom: 5px;
 }
 
 .ender {
@@ -24,13 +23,13 @@ header {
   float: right;
 }
 
-address p {
-  margin: 0;
-}
-
 a {
   text-decoration: none;
   color: #ffff22;;
+}
+
+a:visited {
+  color: #dddd22;;
 }
 
 nav {
@@ -39,6 +38,10 @@ nav {
   float: left;
   margin-right: 10px;
   font-family: 'Rubik', verdana, sans-serif;
+}
+
+ol, ul {
+  line-height: 200%;
 }
 
 nav ul {
@@ -57,4 +60,10 @@ section {
 .apres {
   text-align: center;
   font-size: 18px;
+}
+
+/* my changes */
+
+address p {
+  margin: 0;
 }

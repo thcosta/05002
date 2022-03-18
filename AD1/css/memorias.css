@@ -20,6 +20,15 @@
   margin-right: auto;
   list-style-type: decimal;
   font-family: 'Rubik', verdana, sans-serif;
+}
+
+.listaMemo ul {
+  color: #114455;
+  list-style: disc;
+}
+
+/* my changes */
+ol {
   text-align: left;
 }
 
@@ -28,7 +37,6 @@
 }
 
 .listaMemo ul {
-  color: #114455;
-  list-style: disc;
   font-size: 16px;
 }
+

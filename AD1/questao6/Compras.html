@@ -6,10 +6,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora&family=Rubik&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/pakimemo.css">
-    <link rel="stylesheet" href="css/memorias.css">
-    <link rel="stylesheet" href="css/discos.css">
-    <link rel="stylesheet" href="css/formulario.css">
+    <link rel="stylesheet" href="/css/pakimemo.css">
+    <link rel="stylesheet" href="/css/memorias.css">
+    <link rel="stylesheet" href="/css/discos.css">
+    <link rel="stylesheet" href="/css/formulario.css">
     <style>
       #loginCad {
         width: 260px;
@@ -22,6 +22,9 @@
       }
       #lisSelProd {
         width: 370px;
+      }
+      #selProd {
+        height: 75%;
       }
       #btnIncluir {
         width: 70px;
@@ -52,6 +55,10 @@
       }
 
       /* my changes */
+      #btnIncluir button {
+        float: right;
+      }
+
       fieldset p {
         font-style: italic;
         font-weight: bold;
@@ -65,7 +72,7 @@
   </head>
   <body>
     <header>
-      <img class="imgLogo" src="images/PakiLogoTopo.png">
+      <img class="imgLogo" src="/images/PakiLogoTopo.png">
       <address class="ender">
         <p>Rua do Paço do Elefantinho, 123</p>
         <p>Tel: (21) 4321-5678</p>
@@ -75,38 +82,38 @@
     <main>
       <nav>
         <ul>
-          <li><a href="PakiMemo.html" target="_blank">INICIAL</a></li>
-          <li><a href="Memorias.html" target="_blank">MEMÓRIAS</a></li>
-          <li><a href="Discos.html" target="_blank">HDS / SSDS</a></li>
-          <li><a href="Cadastro.html" target="_blank">CADASTRO</a></li>
-          <li><a href="Compras.html" target="_blank">COMPRAS</a></li>
+          <li><a href="/questao2/PakiMemo.html" target="_blank">INICIAL</a></li>
+          <li><a href="/questao3/Memorias.html" target="_blank">MEMÓRIAS</a></li>
+          <li><a href="/questao4/Discos.html" target="_blank">HDS / SSDS</a></li>
+          <li><a href="/questao5/Cadastro.html" target="_blank">CADASTRO</a></li>
+          <li><a href="/questao6/Compras.html" target="_blank">COMPRAS</a></li>
         </ul>
       </nav>
       <section class="apres">
-        <form action="/PakiMemo.html#" method="post" class="FormBox">
+        <form action="/questao6/Compras.html#" method="post" class="FormBox">
           <h1>Compras</h1>
 
           <fieldset class="FSLinhaInteira">
             <legend>Identificação</legend>
             <div class="LinhaForm">
               <div class="ColEsq" id="loginCad">
-                <label for="email">E-mail:</label>
-              <input type="email" name="email" class="InpBoxGnd" id="idEmail">
+                <label for="idEmail" class="LabBox">E-mail:</label>
+                <input type="email" name="email" id="idEmail" class="InpBoxGnd">
               </div>
               <div class="ColDir" id="senhaCad">
-                <label for="senha">Senha:</label>
-                <input type="password" name="senha" class="InpBoxMed">
+                <label for="senha" class="LabBox">Senha:</label>
+                <input type="password" name="senha" id="senha" class="InpBoxMed">
               </div>
             </div>
-            <p>Se você ainda não tem cadastro clique <a href="Cadastro.html">aqui</a>!</p>
+            <p>Se você ainda não tem cadastro clique <a href="/questao5/Cadastro.html" target="_blank">aqui</a>!</p>
           </fieldset>
 
           <fieldset class="FSLinhaInteira">
             <legend>Lista de Compras</legend>
             <div class="LinhaForm">
               <div class="ColEsq" id="lisSelProd">
-                <label for="produtos">Produtos:</label>
-                <select name="produtos">
+                <label for="selProduto" class="LabBox">Produtos:</label>
+                <select name="produtos" id="selProduto">
                   <option value="" selected>-----</option>
                   <optgroup label="Memória DDR3">
                     <option value="Kingston 4Gb">Kingston 4Gb</option>
@@ -131,16 +138,16 @@
                 </select>
               </div>
               <div class="ColDir" id="btnIncluir">
-                <input type="button" value="Incluir">
+                <button type="button" href="#">Incluir</button>
               </div>
             </div>
             <div class="LinhaForm" id="boxPedidos">
-              <textarea name=lista-de-compras" class="InpBoxGnd" id="lisPedArea" readonly></textarea>
+              <textarea name=lista-de-compras" id="lisPedArea" readonly></textarea>
             </div>
             <div class="LinhaForm">
               <div class="ColDir">
-                <label for="valor">Valor: R$</label>
-                <input type="text" name="valor" class="InpBoxMed" readonly>
+                <label for="valor" class="LabBox">Valor: R$</label>
+                <input type="text" name="valor" id="valor" class="InpBoxMed" readonly>
               </div>
             </div>
           </fieldset>
@@ -150,20 +157,20 @@
             <div class="LinhaForm">
               <div class="ColEsq">
                 <div id="numCartao">
-                  <label>Número:</label>
-                  <input type="text" name="numero-campo1" class="numDD">
-                  <input type="text" name="numero-campo2" class="numDD">
-                  <input type="text" name="numero-campo3" class="numDD">
-                  <input type="text" name="numero-campo4" class="numDD">
+                  <label for="numero-cartao" class="LabBox">Número:</label>
+                  <input type="text" name="numero-campo1" class="numDD" maxlength="4" aria-labelledby="numero-cartao">
+                  <input type="text" name="numero-campo2" class="numDD" maxlength="4" aria-labelledby="numero-cartao">
+                  <input type="text" name="numero-campo3" class="numDD" maxlength="4" aria-labelledby="numero-cartao">
+                  <input type="text" name="numero-campo4" class="numDD" maxlength="4" aria-labelledby="numero-cartao">
                 </div>
                 <div id="valCartao">
-                  <label>Validade:</label>
-                  <input type="number" name="validade-mes" class="numDD" value="1"> / 
-                  <input type="number" name="validade-ano" class="numQD" value="2022">
+                  <label for="validade" class="LabBox">Validade:</label>
+                  <input type="number" name="validade-mes" class="numDD" value="1" min="1" max="12" maxlength="2" aria-labelledby="validade"> / 
+                  <input type="number" name="validade-ano" class="numQD" value="2022" maxlength="4" aria-labelledby="validade">
                 </div>
                 <div id="boxParcel">
-                  <label for="parcelas">Parcelas:</label>
-                  <input type="number" name="parcelas" class="numDD" value="1"> x Sem Juros
+                  <label for="parcelas" class="LabBox">Parcelas:</label>
+                  <input type="number" name="parcelas" id="parcelas" class="numDD" value="1" min="1"> x Sem Juros
                 </div>
               </div>
               
@@ -175,7 +182,7 @@
                 </div>
                 <div>
                   <input type="radio" name="bandeira" id="master" value="master">
-                <label for="master">Master</label>
+                  <label for="master">Master</label>
                 </div>
                 <div>
                   <input type="radio" name="bandeira" id="elo" value="elo">

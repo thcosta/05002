@@ -6,23 +6,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora&family=Rubik&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/pakimemo.css">
-    <link rel="stylesheet" href="css/memorias.css">
-    <link rel="stylesheet" href="css/discos.css">
-    <link rel="stylesheet" href="css/formulario.css">
+    <link rel="stylesheet" href="/css/pakimemo.css">
+    <link rel="stylesheet" href="/css/memorias.css">
+    <link rel="stylesheet" href="/css/discos.css">
+    <link rel="stylesheet" href="/css/formulario.css">
     <style>
       #linhaEnder {
         height: 50px;
       }
       #inpEnder {
-        width: 394px;
+        width: 384px;
         height: 80%;
       }
     </style>
   </head>
   <body>
     <header>
-      <img class="imgLogo" src="images/PakiLogoTopo.png">
+      <img class="imgLogo" src="/images/PakiLogoTopo.png">
       <address class="ender">
         <p>Rua do Paço do Elefantinho, 123</p>
         <p>Tel: (21) 4321-5678</p>
@@ -32,31 +32,31 @@
     <main>
       <nav>
         <ul>
-          <li><a href="PakiMemo.html" target="_blank">INICIAL</a></li>
-          <li><a href="Memorias.html" target="_blank">MEMÓRIAS</a></li>
-          <li><a href="Discos.html" target="_blank">HDS / SSDS</a></li>
-          <li><a href="Cadastro.html" target="_blank">CADASTRO</a></li>
-          <li><a href="Compras.html" target="_blank">COMPRAS</a></li>
+          <li><a href="/questao2/PakiMemo.html" target="_blank">INICIAL</a></li>
+          <li><a href="/questao3/Memorias.html" target="_blank">MEMÓRIAS</a></li>
+          <li><a href="/questao4/Discos.html" target="_blank">HDS / SSDS</a></li>
+          <li><a href="/questao5/Cadastro.html" target="_blank">CADASTRO</a></li>
+          <li><a href="/questao6/Compras.html" target="_blank">COMPRAS</a></li>
         </ul>
       </nav>
       <section class="apres">
-        <form action="/PakiMemo.html#" method="post" class="FormBox">
+        <form action="/questao5/Cadastro.html#" method="post" class="FormBox">
           <h1>Cadastro</h1>
 
           <fieldset class="FSLinhaInteira">
             <legend>Identificação</legend>
             <div class="LinhaForm">
-              <label for="email">E-mail:</label>
-              <input type="email" name="email" class="InpBoxGnd">
+              <label for="email" class="LabBox">E-mail:</label>
+              <input type="email" name="email" id="email" class="InpBoxGnd">
             </div>
             <div class="LinhaForm">
               <div class="ColEsq">
-                <label for="senha">Senha:</label>
-                <input type="password" name="senha" class="InpBoxMed">
+                <label for="senha" class="LabBox">Senha:</label>
+                <input type="password" name="senha" id="senha" class="InpBoxMed">
               </div>
               <div class="ColDir">
-                <label for="senha-confimacao">Confirme:</label>
-                <input type="password" name="senha-confimacao" class="InpBoxMed">
+                <label for="senha-confimacao" class="LabBox">Confirme:</label>
+                <input type="password" name="senha-confimacao" id="senha-confimacao" class="InpBoxMed">
               </div>
             </div>
           </fieldset>
@@ -64,21 +64,21 @@
           <fieldset class="FSLinhaInteira">
             <legend>Dados Pessoais</legend>
             <div class="LinhaForm">
-              <label for="nome">Nome:</label>
-              <input type="text" name="nome" class="InpBoxGnd">
+              <label for="nome" class="LabBox">Nome:</label>
+              <input type="text" name="nome" id="nome" class="InpBoxGnd">
             </div>
             <div class="LinhaForm" id="linhaEnder">
-              <label for="endereco">Endereço:</label>
-              <textarea name="endereco" class="InpBoxGnd" id="inpEnder"></textarea>
+              <label for="inpEnder" class="LabBox">Endereço:</label>
+              <textarea name="endereco" id="inpEnder" class="InpBoxGnd"></textarea>
             </div>
             <div class="LinhaForm">
               <div class="ColEsq">
-                <label for="telefone">Telefone:</label>
-                <input type="tel" name="telefone" class="InpBoxMed" pattern="\d{8,}">
+                <label for="telefone" class="LabBox">Telefone:</label>
+                <input type="tel" name="telefone" id="telefone" class="InpBoxMed" pattern="\d{8,}">
               </div>
               <div class="ColDir">
-                <label for="celular">Celular:</label>
-                <input type="tel" name="celular" class="InpBoxMed" pattern="\d{9,}">
+                <label for="celular" class="LabBox">Celular:</label>
+                <input type="tel" name="celular" id="celular" class="InpBoxMed" pattern="\d{9,}">
               </div>
             </div>
 
@@ -94,9 +94,12 @@
             <fieldset class="FSColDir">
               <legend>Sexo:</legend>
               <div class="LinhaForm">
-                <input type="radio" name="sexo" value="masculino"> Mas
-                <input type="radio" name="sexo" value="feminino"> Fem
-                <input type="radio" name="sexo" value="outro" checked> Outro
+                <input type="radio" name="sexo" id="masculino" value="masculino">
+                <label for="masculino">Mas</label>
+                <input type="radio" name="sexo" id="feminino" value="feminino">
+                <label for="feminino">Fem</label>
+                <input type="radio" name="sexo" id="outro" value="outro" checked>
+                <label for="outro">Outro</label>
               </div>
             </fieldset>
           </fieldset>

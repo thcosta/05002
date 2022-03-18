@@ -7,6 +7,7 @@
   background-color: #ffffff;
   color: #000066;
   font-family: 'Rubik', verdana, sans-serif;
+  font-size: 16px;
 }
 
 .tabDisco td, .tabDisco th {
@@ -19,7 +20,7 @@
   background-color: #229955;
   font-weight: bold;
   text-align: center;
-  font-size: 16px;
+  /* font-size: 16px; ja definido em .tabDisco*/ 
 }
 
 .linTH {
