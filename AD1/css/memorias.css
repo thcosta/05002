@@ -24,7 +24,7 @@
 
 .listaMemo ul {
   color: #114455;
-  list-style: disc;
+  list-style-type: disc;
 }
 
 /* my changes */
@@ -33,7 +33,7 @@ ol {
 }
 
 .listaMemo li {
-  padding: 5px;
+  padding-bottom: 5px;
 }
 
 .listaMemo ul {

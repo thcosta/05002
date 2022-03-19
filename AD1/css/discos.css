@@ -7,7 +7,7 @@
   background-color: #ffffff;
   color: #000066;
   font-family: 'Rubik', verdana, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .tabDisco td, .tabDisco th {
@@ -15,28 +15,34 @@
   padding: 6px 12px 6px 12px;
 }
 
-.titulo {
+.tabDisco .titulo {
   color: #ffff00;
   background-color: #229955;
   font-weight: bold;
   text-align: center;
-  /* font-size: 16px; ja definido em .tabDisco*/ 
+  font-size: 16px;
 }
 
-.linTH {
+.tabDisco .linTH {
   color: #ffffff;
   background-color: #22bb66;
   vertical-align: middle;
   text-align: center;
 }
 
-.colTH {
+.tabDisco .colTH {
   color: #ffffff;
   background-color: #2299dd;
   text-align: left;
 }
 
-.imgDisco {
+.tabDisco .imgDisco {
   width: 70px;
   height: 70px;
+}
+
+/* my changes */
+
+.tabDisco {
+  text-align: left;
 }
