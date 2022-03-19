@@ -40,23 +40,23 @@
         </ul>
       </nav>
       <section class="apres">
-        <form action="/questao5/Cadastro.html#" method="post" class="FormBox">
+        <form action="/questao5/Cadastro.html#" method="post" class="FormBox" autocomplete="off">
           <h1>Cadastro</h1>
 
           <fieldset class="FSLinhaInteira">
             <legend>Identificação</legend>
             <div class="LinhaForm">
               <label for="email" class="LabBox">E-mail:</label>
-              <input type="email" name="email" id="email" class="InpBoxGnd">
+              <input type="email" name="email" id="email" class="InpBoxGnd" required>
             </div>
             <div class="LinhaForm">
               <div class="ColEsq">
                 <label for="senha" class="LabBox">Senha:</label>
-                <input type="password" name="senha" id="senha" class="InpBoxMed">
+                <input type="password" name="senha" id="senha" class="InpBoxMed" required>
               </div>
               <div class="ColDir">
                 <label for="senha-confimacao" class="LabBox">Confirme:</label>
-                <input type="password" name="senha-confimacao" id="senha-confimacao" class="InpBoxMed">
+                <input type="password" name="senha-confimacao" id="senha-confimacao" class="InpBoxMed" required>
               </div>
             </div>
           </fieldset>
@@ -65,7 +65,7 @@
             <legend>Dados Pessoais</legend>
             <div class="LinhaForm">
               <label for="nome" class="LabBox">Nome:</label>
-              <input type="text" name="nome" id="nome" class="InpBoxGnd">
+              <input type="text" name="nome" id="nome" class="InpBoxGnd" required>
             </div>
             <div class="LinhaForm" id="linhaEnder">
               <label for="inpEnder" class="LabBox">Endereço:</label>
@@ -74,20 +74,20 @@
             <div class="LinhaForm">
               <div class="ColEsq">
                 <label for="telefone" class="LabBox">Telefone:</label>
-                <input type="tel" name="telefone" id="telefone" class="InpBoxMed" pattern="\d{8,}">
+                <input type="tel" name="telefone" id="telefone" class="InpBoxMed" pattern="^\d{8,}$" required>
               </div>
               <div class="ColDir">
                 <label for="celular" class="LabBox">Celular:</label>
-                <input type="tel" name="celular" id="celular" class="InpBoxMed" pattern="\d{9,}">
+                <input type="tel" name="celular" id="celular" class="InpBoxMed" pattern="^\d{9,}$">
               </div>
             </div>
 
             <fieldset class="FSColEsq">
               <legend>Nascimento:</legend>
               <div class="LinhaForm">
-                <input type="number" name="nascimento-dia" class="numDD" min="1" max="31" maxlength="2"> / 
-                <input type="number" name="nascimento-mes" class="numDD" min="1" max="12" maxlength="2"> / 
-                <input type="number" name="nascimento-ano" class="numQD" value="1980" maxlength="4">
+                <input type="number" name="nascimento-dia" class="numDD" min="1" max="31"> / 
+                <input type="number" name="nascimento-mes" class="numDD" min="1" max="12"> / 
+                <input type="number" name="nascimento-ano" class="numQD" value="1980">
               </div>
             </fieldset>
 
