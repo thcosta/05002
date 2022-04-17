@@ -46,3 +46,32 @@
 .tabDisco {
   text-align: left;
 }
+
+/* Asked changes */
+
+#titDes {
+  height: 60px;
+  text-align: center;
+}
+
+#prcDes  {
+  height: 100px;
+}
+
+#imgDes {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #226699;
+  padding: 12px;
+  background-color: #ffffff;
+  margin-right: 5px;
+  margin-left: 5px;
+} 
+
+.tabDisco .colMenu {
+  height: 45px;
+}
+
+.tabDisco a:visited {
+  color: #005599;
+}
