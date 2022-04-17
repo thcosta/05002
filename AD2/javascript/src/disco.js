@@ -1,4 +1,10 @@
 export class Disco {
+  fabricante
+  interface
+  capacidade
+  imagem
+  preco
+  
   constructor(attributes = new Map()) {
     this.fabricante = attributes['fabricante'];
     this.interface = attributes['interface'];

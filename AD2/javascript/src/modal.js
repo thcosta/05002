@@ -1,4 +1,7 @@
 export default class Modal {
+  modal
+  attributes
+  
   constructor(modalElement, dataAttributes) {
     Modal.setBlackout()
 
