@@ -1,0 +1,73 @@
+body {
+  background-color: #116688;
+  color: #eeee22;
+  font-size: 16px;
+  font-family: 'Lora', georgia, serif;
+}
+
+header {
+  display: block;
+  margin-bottom: 1px;
+}
+
+.imgLogo {
+  border-bottom: 3px solid #eeee22;
+  margin-bottom: 4px;
+  padding-bottom: 5px;
+}
+
+.ender {
+  text-align: right;
+  font-size: 14px;
+  line-height: 140%;
+  float: right;
+}
+
+a {
+  text-decoration: none;
+  color: #ffff22;;
+}
+
+a:visited {
+  color: #dddd22;;
+}
+
+nav {
+  display: block;
+  width: 18%;
+  float: left;
+  margin-right: 10px;
+  font-family: 'Rubik', verdana, sans-serif;
+}
+
+ol, ul {
+  line-height: 200%;
+}
+
+nav ul {
+  color: #ffdd22;
+  line-height: 230%;
+  margin-top: 40px;
+  list-style-type: square;
+}
+
+section {
+  display: block;
+  width: 70%;
+  float: right;
+}
+
+.apres {
+  text-align: center;
+  font-size: 18px;
+}
+
+/* my changes */
+
+address p {
+  margin: 0;
+}
+
+.apres {
+  margin-top: 25px;
+}

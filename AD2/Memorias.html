@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Thays Costa">
+  <title>PakiMemo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora&family=Rubik" rel="stylesheet">
+  <link rel="stylesheet" href="css/pakimemo.css">
+  <link rel="stylesheet" href="css/memorias.css">
+  <link rel="stylesheet" href="css/modal.css">
+
+  <script type="module" src="javascript/memorias.js" defer="true"></script>
+</head>
+
+<body>
+  <header>
+    <img class="imgLogo" src="images/PakiLogoTopo.png">
+    <address class="ender">
+      <p>Rua do Paço do Elefantinho, 123</p>
+      <p>Tel: (21) 4321-5678</p>
+      <a href="mailto:contato@paquiderme.com.br">contato@paquiderme.com.br</a>
+    </address>
+  </header>
+  <main>
+    <nav>
+      <ul>
+        <li><a href="PakiMemo.html" target="_blank">INICIAL</a></li>
+        <li><a href="Memorias.html" target="_blank">MEMÓRIAS</a></li>
+        <li><a href="Discos.html" target="_blank">HDs / SSDs</a></li>
+        <li><a href="Cadastro.html" target="_blank">CADASTRO</a></li>
+        <li><a href="Compras.html" target="_blank">COMPRAS</a></li>
+      </ul>
+    </nav>
+    <section class="apres">
+      <h1 class="Titulo">Memórias</h1>
+
+      <ol class="listaMemo">
+        <li>
+          <a href="#" class="modal-trigger" data-modal="modal-memorias" data-title="Tipo DDR3"
+            data-manufacturer="Kingston" data-capacity="4Gb" data-price="R$ 200,00"
+            data-image="images/SSD_Kingston_960Gb_70.jpg">
+            DDR3 Kingston 4Gb
+          </a>
+        </li>
+        <li>
+          <a href="#" class="modal-trigger" data-modal="modal-memorias" data-title="Tipo DDR3"
+            data-manufacturer="Samsung" data-capacity="8Gb" data-price="R$ 190,00"
+            data-image="images/SSD_Kingston_960Gb_70.jpg">
+            DDR3 Samsung 8Gb
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="modal-trigger" data-modal="modal-memorias" data-title="Tipo DDR4"
+            data-manufacturer="Kingston Fury" data-capacity="8Gb" data-price="R$ 298,00"
+            data-image="images/SSD_Kingston_960Gb_70.jpg">
+            DDR4 Kingston Fury 8Gb
+          </a>
+        </li>
+        <li>
+          <a href="#" class="modal-trigger" data-modal="modal-memorias" data-title="Tipo DDR4"
+            data-manufacturer="Corsair Vengeance" data-capacity="8Gb" data-price="R$ 245,00"
+            data-image="images/SSD_Kingston_960Gb_70.jpg">
+            DDR4 Corsair Vengeance 8Gb
+          </a>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <div class="modal" id="modal-memorias">
+    <div class="modal-body">
+      <h3 class="title"></h3>
+      <img class="image" src="#">
+
+      <div id="janInfoDetalhe">
+        <p>Fabricante: <span class="manufacturer"></span></p>
+        <p>Capacidade: <span class="capacity"></span></p>
+        <p>Preço: <span class="price"></span></p>
+      </div>
+
+      <button type="button" class="modal-close">Fechar</button>
+    </div>
+  </div>
+
+</body>
+
+</html>
