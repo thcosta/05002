@@ -1,8 +1,8 @@
 export default class Modal {
-  constructor(modal, dataAttributes) {
+  constructor(modalElement, dataAttributes) {
     Modal.setBlackout()
 
-    this.modal = modal
+    this.modal = modalElement
     this.#setAttributes(dataAttributes)
     this.#enableClose()
   }
@@ -22,6 +22,18 @@ export default class Modal {
           element.src = attrValue
         } else {
           element.textContent = attrValue
+        }
+    }
+  }
+
+  #emptyBody() {
+    for (const attrMame of this.attributes.keys()) {
+      let element = this.modal.querySelector(`.${attrMame}`);
+        if (element === undefined || element === null) continue;
+        if (attrMame === 'image') {
+          element.src = ''
+        } else {
+          element.textContent = ''
         }
     }
   }
@@ -49,6 +61,7 @@ export default class Modal {
     let blackout = document.querySelector('.body-blackout')
 
     this.modal.classList.remove('is-visible')
+    this.#emptyBody()
     if(blackout !== null && blackout !== undefined) blackout.classList.remove('is-blacked-out')
   }
 
