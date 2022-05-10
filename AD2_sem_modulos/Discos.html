@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Thays Costa">
+  <title>PakiMemo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora&family=Rubik" rel="stylesheet">
+  <link rel="stylesheet" href="css/pakimemo.css">
+  <link rel="stylesheet" href="css/memorias.css">
+  <link rel="stylesheet" href="css/discos.css">
+
+  <script src="javascript/discos.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <img class="imgLogo" src="images/PakiLogoTopo.png">
+    <address class="ender">
+      <p>Rua do Paço do Elefantinho, 123</p>
+      <p>Tel: (21) 4321-5678</p>
+      <a href="mailto:contato@paquiderme.com.br">contato@paquiderme.com.br</a>
+    </address>
+  </header>
+  <main>
+    <nav>
+      <ul>
+        <li><a href="PakiMemo.html" target="_blank">INICIAL</a></li>
+        <li><a href="Memorias.html" target="_blank">MEMÓRIAS</a></li>
+        <li><a href="Discos.html" target="_blank">HDs / SSDs</a></li>
+        <li><a href="Cadastro.html" target="_blank">CADASTRO</a></li>
+        <li><a href="Compras.html" target="_blank">COMPRAS</a></li>
+      </ul>
+    </nav>
+    <section class="apres">
+      <table class="tabDisco">
+        <thead>
+          <tr class="titulo">
+            <th colspan="5">HDs e SSDs Internos</th>
+          </tr>
+          <tr class="linTH">
+            <th>Tipo / Interface</th>
+            <th>Fabricante</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th rowspan="2" class="colTH">HD Sata III</th>
+            <td class="colMenu"><a href="#" id="hdSataWD" data-fabricante="Western Digital" data-interface="HD Sata III" data-capacidade="500 Gb"
+                data-imagem="images/HD_WD_500gb_70.jpg" data-preco="170,00">Western Digital</a></td>
+            <td rowspan="6" id="description"></td>
+          </tr>
+          <tr>
+            <td class="colMenu">
+              <a href="#" id="hdSataSeagate" data-fabricante="Seagate" data-interface="HD Sata III"
+                data-capacidade="1 Tb" data-imagem="images/HD_Seagate_1Tb_70.jpg" data-preco="350,00">Seagate
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <th rowspan="2" class="colTH">SSD Sata III</th>
+            <td class="colMenu">
+              <a href="#" id="ssdSataSamdisk" data-fabricante="Samdisk" data-interface="SSD Sata III"
+                data-capacidade="480 Gb" data-imagem="images/SSD_Samdisk_480Gb_70.jpg"
+                data-preco="380,00">Samdisk</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="colMenu">
+              <a href="#" id="ssdSataKingston" data-fabricante="Kingston" data-interface="SSD Sata III" data-capacidade="960 Gb"
+                data-imagem="images/SSD_Kingston_960Gb_70.jpg" data-preco="700,00">Kingston
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <th rowspan="2" class="colTH">SSD M2</th>
+            <td class="colMenu"><a href="#" id="ssdM2Kingston" data-fabricante="Kingston" data-interface="SSD M2" data-capacidade="500 Gb"
+                data-imagem="images/SSD_Kingston_M2_5000Gb_70.jpg" data-preco="410,00">Kingston</a></td>
+          </tr>
+          <tr>
+            <td class="colMenu"><a href="#" id="ssdM2WD" data-fabricante="Western Digital" data-interface="SSD M2" data-capacidade="240 Gb"
+                data-imagem="images/SSD_WD_M2_240Gb_70.jpg" data-preco="270,00">Western Digital</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+
+</html>

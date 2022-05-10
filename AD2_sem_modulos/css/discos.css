@@ -1,0 +1,77 @@
+.tabDisco {
+  border-collapse: collapse;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffff;
+  color: #000066;
+  font-family: 'Rubik', verdana, sans-serif;
+  font-size: 14px;
+}
+
+.tabDisco td, .tabDisco th {
+  border: 3px solid #226699;
+  padding: 6px 12px 6px 12px;
+}
+
+.tabDisco .titulo {
+  color: #ffff00;
+  background-color: #229955;
+  font-weight: bold;
+  text-align: center;
+  font-size: 16px;
+}
+
+.tabDisco .linTH {
+  color: #ffffff;
+  background-color: #22bb66;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.tabDisco .colTH {
+  color: #ffffff;
+  background-color: #2299dd;
+  text-align: left;
+}
+
+.tabDisco .imgDisco {
+  width: 70px;
+  height: 70px;
+}
+
+/* my changes */
+
+.tabDisco {
+  text-align: left;
+}
+
+/* Asked changes */
+
+#titDes {
+  height: 60px;
+  text-align: center;
+}
+
+#prcDes  {
+  height: 100px;
+}
+
+#imgDes {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #226699;
+  padding: 12px;
+  background-color: #ffffff;
+  margin-right: 5px;
+  margin-left: 5px;
+} 
+
+.tabDisco .colMenu {
+  height: 45px;
+}
+
+.tabDisco a:visited {
+  color: #005599;
+}

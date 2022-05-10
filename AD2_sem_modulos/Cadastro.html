@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Thays Costa">
+    <title>PakiMemo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Rubik" rel="stylesheet">
+    <link rel="stylesheet" href="css/pakimemo.css">
+    <link rel="stylesheet" href="css/memorias.css">
+    <link rel="stylesheet" href="css/discos.css">
+    <link rel="stylesheet" href="css/formulario.css">
+    <style>
+      #linhaEnder {
+        height: 50px;
+      }
+      /* #inpEnder {
+        width: 394px;
+        height: 80px;
+      } */
+      
+      /* my changes */
+      #inpEnder {
+        width: 384px;
+        height: 80%;
+      }
+    </style>
+
+    <script src="javascript/cadastro.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <img class="imgLogo" src="images/PakiLogoTopo.png">
+      <address class="ender">
+        <p>Rua do Paço do Elefantinho, 123</p>
+        <p>Tel: (21) 4321-5678</p>
+        <a href="mailto:contato@paquiderme.com.br">contato@paquiderme.com.br</a>
+      </address>
+    </header>
+    <main>
+      <nav>
+        <ul>
+          <li><a href="PakiMemo.html" target="_blank">INICIAL</a></li>
+          <li><a href="Memorias.html" target="_blank">MEMÓRIAS</a></li>
+          <li><a href="Discos.html" target="_blank">HDs / SSDs</a></li>
+          <li><a href="Cadastro.html" target="_blank">CADASTRO</a></li>
+          <li><a href="Compras.html" target="_blank">COMPRAS</a></li>
+        </ul>
+      </nav>
+      <section class="apres">
+        <form action="/questao5/Cadastro.html#" method="post" class="FormBox" autocomplete="off">
+          <h1>Cadastro</h1>
+
+          <fieldset class="FSLinhaInteira">
+            <legend>Identificação</legend>
+            <div class="LinhaForm">
+              <label for="email" class="LabBox">E-mail:</label>
+              <input type="email" name="email" id="email" class="InpBoxGnd" required>
+            </div>
+            <div class="LinhaForm">
+              <div class="ColEsq">
+                <label for="senha" class="LabBox">Senha:</label>
+                <input type="password" name="senha" id="senha" class="InpBoxMed" required>
+              </div>
+              <div class="ColDir">
+                <label for="senha-confimacao" class="LabBox">Confirme:</label>
+                <input type="password" name="senha-confimacao" id="senha-confimacao" class="InpBoxMed" required>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="FSLinhaInteira">
+            <legend>Dados Pessoais</legend>
+            <div class="LinhaForm">
+              <label for="nome" class="LabBox">Nome:</label>
+              <input type="text" name="nome" id="nome" class="InpBoxGnd" required>
+            </div>
+            <div class="LinhaForm" id="linhaEnder">
+              <label for="inpEnder" class="LabBox">Endereço:</label>
+              <textarea name="endereco" id="inpEnder" class="InpBoxGnd"></textarea>
+            </div>
+            <div class="LinhaForm">
+              <div class="ColEsq">
+                <label for="telefone" class="LabBox">Telefone:</label>
+                <input type="tel" name="telefone" id="telefone" class="InpBoxMed" pattern="^\d{8,}$" required>
+              </div>
+              <div class="ColDir">
+                <label for="celular" class="LabBox">Celular:</label>
+                <input type="tel" name="celular" id="celular" class="InpBoxMed" pattern="^\d{9,}$">
+              </div>
+            </div>
+
+            <fieldset class="FSColEsq">
+              <legend>Nascimento:</legend>
+              <div class="LinhaForm">
+                <input type="number" name="nascimento-dia" class="numDD" min="1" max="31"> / 
+                <input type="number" name="nascimento-mes" class="numDD" min="1" max="12"> / 
+                <input type="number" name="nascimento-ano" class="numQD" value="1980">
+              </div>
+            </fieldset>
+
+            <fieldset class="FSColDir">
+              <legend>Sexo:</legend>
+              <div class="LinhaForm">
+                <input type="radio" name="sexo" id="masculino" value="masculino" required>
+                <label for="masculino">Mas</label>
+                <input type="radio" name="sexo" id="feminino" value="feminino">
+                <label for="feminino">Fem</label>
+                <input type="radio" name="sexo" id="outro" value="outro" checked>
+                <label for="outro">Outro</label>
+              </div>
+            </fieldset>
+          </fieldset>
+
+          <div class="botoes">
+            <input type="submit" value="Cadastrar">
+            <input type="reset" value="Limpar">
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
