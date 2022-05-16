@@ -72,6 +72,17 @@
   height: 45px;
 }
 
-.tabDisco a:visited {
+.tabDisco a, .tabDisco a:visited {
   color: #005599;
+}
+
+/* my changes */
+
+#description {
+  width: 168px;
+  text-align: center;
+}
+
+#prcDes  {
+  text-align: left;
 }

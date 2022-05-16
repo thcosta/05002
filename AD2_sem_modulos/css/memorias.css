@@ -48,7 +48,7 @@ ol {
   margin-left: 15px;
 }
 
-.listaMemo a:visited {
+.listaMemo a, .listaMemo a:visited {
   color: #005599;
 }
 

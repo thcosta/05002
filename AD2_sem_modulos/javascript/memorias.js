@@ -1,90 +1,119 @@
+
+/**
+ * Class to create a floating window with dynamic content
+ * @property  {HTMLElement} blackoutElement element div that is placed out of focus
+ * @property  {HTMLElement} modalElement element div of the modal window
+ */
 class Modal {
-  modal
-  attributes
+  #blackoutElement
+  #modalElement
   
-  constructor(modalElement, dataAttributes) {
-    Modal.setBlackout()
-
-    this.modal = modalElement
-    this.#setAttributes(dataAttributes)
-    this.#enableClose()
+  constructor(options) {
+    this.#appendModal(options)
+    this.#enableBackground()
+    this.#enableButtonClose()
   }
 
-  #setAttributes(dataAttributes) {
-    this.attributes = new Map();
-    for(let attr in dataAttributes){
-      this.attributes.set(attr, dataAttributes[attr])
+/**
+ * Create the modal div and 
+ * append to the body
+ */
+  #appendModal(options) {
+    this.#modalElement = document.createElement('div')
+    Object.assign(this.#modalElement, {...options, className: 'modal' })
+    this.#modalElement.innerHTML = `<div class="modal-body">
+      <div id="modalContent"></div>
+      <button type="button" class="modal-close">Fechar</button>
+    </div>`
+    document.body.append(this.#modalElement)
+  }
+
+/**
+ * Create the blackout div and append to the body
+ * Enable it to close the modal
+ */
+  #enableBackground() {
+    this.#blackoutElement = document.querySelector('.blackout')
+    if (this.#blackoutElement === null) {
+      this.#blackoutElement = document.createElement('div')
+      this.#blackoutElement.className = 'blackout'
+      document.body.prepend(this.#blackoutElement)
     }
+      
+    this.#blackoutElement.addEventListener('click', () => { this.close() })
   }
 
-  #fillBody() {
-    for (const [attrMame, attrValue] of this.attributes.entries()) {
-      let element = this.modal.querySelector(`.${attrMame}`);
-        if (element === undefined || element === null) continue;
-        if (attrMame === 'image') {
-          element.src = attrValue
-        } else {
-          element.textContent = attrValue
-        }
-    }
+/**
+ * Enable modal button to close it
+ */
+  #enableButtonClose() {
+    const button = this.#modalElement.querySelector('.modal-close')
+    button.addEventListener('click', () => { this.close() })
   }
 
-  #emptyBody() {
-    for (const attrMame of this.attributes.keys()) {
-      let element = this.modal.querySelector(`.${attrMame}`);
-        if (element === undefined || element === null) continue;
-        if (attrMame === 'image') {
-          element.src = ''
-        } else {
-          element.textContent = ''
-        }
-    }
+/**
+ * Insert template in modal content
+ * @param {HTMLString} template html parsed string that is the modal content
+ */
+  fill(template){
+    const contentDiv = this.#modalElement.querySelector('#modalContent')
+    contentDiv.innerHTML = ''
+    contentDiv.innerHTML = template
   }
 
-  #enableClose() {
-    let blackout = document.querySelector('.body-blackout')
-
-    this.modal.querySelectorAll('.modal-close').forEach(button => {
-      button.addEventListener('click', () => { this.close() })
-    })
-    if(blackout !== null && blackout !== undefined) {
-      blackout.addEventListener('click', () => { this.close() })
-    }
-  }
-
+/**
+ * Put modal and blackout visible
+ */
   open() {
-    let blackout = document.querySelector('.body-blackout')
-    if(blackout !== null && blackout !== undefined) blackout.classList.add('is-blacked-out')  
-
-    this.#fillBody()
-    this.modal.classList.add('is-visible')
+    this.#blackoutElement.classList.add('visible')  
+    this.#modalElement.classList.add('visible')
   }
 
+/**
+ * Put modal and blackout invisible
+ */
   close(){
-    let blackout = document.querySelector('.body-blackout')
-
-    this.modal.classList.remove('is-visible')
-    this.#emptyBody()
-    if(blackout !== null && blackout !== undefined) blackout.classList.remove('is-blacked-out')
-  }
-
-  static setBlackout(){
-    if (document.querySelector('.body-blackout')) return
-    document.querySelector('body').insertAdjacentHTML('beforeend', '<div class="body-blackout"></div>')
-  }
-
-  static enableModals() {
-    const modalsButtons = document.querySelectorAll('.modal-trigger')
-    if(modalsButtons.length > 0){
-      modalsButtons.forEach(button => {
-        let modal = document.getElementById(button.dataset.modal)
-        let modalObject = new Modal(modal, button.dataset)
-        if(modal !== undefined) {
-          button.addEventListener('click', function(){ modalObject.open() })
-        }
-      })
-    }
+    this.#modalElement.classList.remove('visible')
+    this.#blackoutElement.classList.remove('visible')
   }
 }
 
-Modal.enableModals();
+/**
+ * Create modal object
+ */
+const modal = new Modal({id: 'modal-memorias'})
+
+/**
+ * Search links that open the modal on DOM tree and enable them to open it
+ */
+const modalsButtons = document.querySelectorAll(`a[data-trigger='modal-memorias']`)
+modalsButtons.forEach(button => {
+    button.addEventListener('click', openModal)
+})
+
+/**
+ * Fill modal content with template and open it
+ * @param {EventTarget} event event
+ */
+function openModal(event){
+  const template = modalTemplate(event.currentTarget.dataset)
+  modal.fill(template)
+  modal.open()
+}
+
+/**
+ * Create template from dataset attributes of the current link
+ * @param {DOMStringMap} attributes dataset attributes
+ * @return {String} template in html parsed string
+ */
+function modalTemplate(attributes){
+  const title = `<h2>${attributes.type}</h2>`
+  const image = `<img src="images/${attributes.image}">`
+  const info = `<div id="janInfoDetalhe">
+    <p>Fabricante: ${attributes.manufacturer}</p>
+    <p>Capacidade: ${attributes.capacity}</p>
+    <p>Preço:  ${attributes.price}</p>
+  </div>`
+
+  return title + image + info
+}

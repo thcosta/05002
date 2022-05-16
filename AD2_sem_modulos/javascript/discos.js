@@ -1,3 +1,11 @@
+/**
+ * Class to create disk objects
+ * @property  {String} fabricante disk manufacturer
+ * @property  {String} interface disk interface
+ * @property  {String} capacidade disk capacity
+ * @property  {String} imagem disk image file name
+ * @property  {String} preco disk price
+ */
 class Disco {
   fabricante
   interface
@@ -12,104 +20,119 @@ class Disco {
     this.imagem = attributes['imagem'];
     this.preco = attributes['preco'];
   }
+
+/**
+ * Getter of disk description template in html
+ * @return {String} html parsed string
+ */
+  get template() {
+    const title = `<h4 id="titDes">${this.fabricante}</h4>`
+    const image = `<img alt="Imagem do HD Selecionado" src="images/${this.imagem}" id="imgDes">`
+    const div = `<div id="prcDes">
+      <p>Interface: ${this.interface}</p>
+      <p>Capacidade: ${this.capacidade}</p>
+      <p>Preço: R$ <span class='preco'>${this.preco}</span></p>
+    </div>`
+    return title + image + div
+  }
 }
 
-class DiscoDescription {
-  _disco
-  _content
-  parentBox
+/**
+ * Class to toggle html content of a html element
+ * @property  {HTMLElement} element html element  
+ * @property  {String} emptyTemplate html template when object is empty
+ * @property  {String} currentContent current html content of the element
+ * @property  {String} newContent  new html content
+ */
+class Toggle {
+  element
+  #emptyTemplate
+  #currentContent
+  #newContent
 
-  constructor(parentBox=null) {
-    this.parentBox = parentBox
+  constructor(element, emptyTemplate) {
+    this.element = element
+    this.#emptyTemplate = emptyTemplate
+    this.#currentContent = null
+    this.#newContent = null
   }
 
-  get disco() { return this._disco }
-  set disco(newDisco) { this._disco = newDisco }
+/**
+ * Getter of element's current content
+ * @return {HTMLString} current html content of the element
+ */
+  get content() { return this.#currentContent }
 
-  get content() { return this._content }
-  set content(newContent) { this._content = newContent }
-
-  #title(){
-    return `<h4 id="titDes">${this.disco.fabricante}</h4>`
+/**
+ * Setter of element's content'
+ * Fill with innerContent if is not null or with emptyTemplate
+ * @param {HTMLString} innerContent html parsed content
+ */
+  set content(innerContent) { 
+    this.#newContent = innerContent ||  this.#emptyTemplate
   }
 
-  #image(){
-    return `<img alt="Imagem do HD Selecionado" src="${this.disco.imagem}" id="imgDes">`
+
+/**
+ * Private method that check if element changed, i.e., 
+ * current content is the same of new content
+ * @return {Boolean}
+ */
+  #hasChanged() {  
+    return this.#currentContent !== this.#newContent
   }
 
-  #body(){
-    let divElement =  document.createElement('div')
-    divElement.setAttribute('id', 'prcDes')
-    divElement.insertAdjacentHTML('afterbegin', `<p>Interface: ${this.disco.interface}</p>`)
-    divElement.insertAdjacentHTML('beforeend', `<p>Capacidade: ${this.disco.capacidade}</p>`)
-    divElement.insertAdjacentHTML('beforeend', `<p>Preço: R$ <span class='preco'>${this.disco.preco}</span></p>`)
-    return divElement.outerHTML
+/**
+ * Private method that change element content to new content
+ */
+  #change(){ 
+    this.#currentContent = this.#newContent
+    this.element.innerHTML = ''
+    this.element.insertAdjacentHTML('afterbegin', this.content)
   }
 
-  #emptyBody(){
-    return '<img alt="Imagem Vazia" src="images/vazio.jpg" id="imgDes">'
-  }
 
-  description(){
-    return this.#title() + this.#image() + this.#body()
-  }
-
-  show(){
-    this.content = this.description()
-
-    if(this.parentBox === null){
-      document.body.insertAdjacentHTML('beforeend', this.content)
-      return
+/**
+ * Method that change element content if new content is different from current content.
+ * If not, it change for empty template.
+ * @param {HTMLString} newContent html parsed content
+ */
+  toggle(newContent){
+    this.content = newContent
+    
+    if(!this.#hasChanged()) {
+      this.content = null
     }
-    this.parentBox.innerHTML = ''
-    this.parentBox.insertAdjacentHTML('beforeend', this.content)
-  }
-
-  empty(){
-    this.content = null
-
-    if(this.parentBox === null) return
-    this.parentBox.innerHTML = ''
-    this.parentBox.insertAdjacentHTML('afterbegin', this.#emptyBody())
-  }
-
-  changed() {  
-    return this.content !== this.description()
+    this.#change()
   }
 }
 
-class Toogle {
-  enabled
-  _element
+/**
+ * Search description table row 
+ */
+const description = document.getElementById('description')
 
-  constructor(element) {
-    this.enabled = false;
-    this._element = element; 
-    this.#empty()
-  }
+/**
+ * Set empty template
+ */
+const emptyTemplate = `<h4 id="titDes"></h4>
+  <img alt="Imagem Vazia" src="images/vazio.jpg" id="imgDes">
+  <div id="prcDes">
+    <p></p>
+    <p></p>
+    <p></p>
+</div>`
 
-  get element() { return this._element }
+/**
+ * Create toggle object and toggle element content to empty template
+ */
+const toggleDescription = new Toggle(description, emptyTemplate)
+toggleDescription.toggle()
 
-  #empty(){
-    this.enabled = false;
-    this.element.empty()
-  }
 
-  #show() {
-    this.enabled = true;
-    this.element.show()
-  }
-
-  toogle(){
-    if(!this.enabled || this.element.changed()) {
-      this.#show()
-    } else {
-      this.#empty()
-    }
-  }
-
-}
-
+/**
+ * Search links that represents disk elements
+ */
 const hdSataWD = document.getElementById('hdSataWD')
 const hdSataSeagate = document.getElementById('hdSataSeagate')
 const ssdSataSamdisk = document.getElementById('ssdSataSamdisk')
@@ -117,9 +140,9 @@ const ssdSataKingston = document.getElementById('ssdSataKingston')
 const ssdM2Kingston = document.getElementById('ssdM2Kingston')
 const ssdM2WD = document.getElementById('ssdM2WD')
 
-const description = new DiscoDescription(document.getElementById('description'))
-const toogleDescription = new Toogle(description)
-
+/**
+ * Create disks vector
+ */
 const discosArray = [
   new Disco(hdSataWD.dataset),
   new Disco(hdSataSeagate.dataset),
@@ -129,17 +152,18 @@ const discosArray = [
   new Disco(ssdM2WD.dataset)
 ]
 
-console.log(discosArray)
+/**
+ * Print disks vector on console in JSON format
+ */
+console.log(JSON.stringify(discosArray, null, 2));
 
+/**
+ * For each disk object, enable matched link when clicked to toggle description content with disk template
+ */
 discosArray.forEach(disco => {
   const button = document.querySelector(`a[data-interface='${disco.interface}'][data-fabricante='${disco.fabricante}']`)
 
-  if(button !== null && button !== undefined){
-    button.addEventListener('click', function(){ setDescription(disco) })
+  if(button !== null){
+    button.addEventListener('click', () => { toggleDescription.toggle(disco.template) })
   }
 })
-
-function setDescription(disco){
-  description.disco = disco
-  toogleDescription.toogle()
-}
